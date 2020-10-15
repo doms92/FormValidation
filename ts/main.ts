@@ -6,6 +6,13 @@ window.onload = function(){
 }
 
 function main():void{
-    alert("Reg button was clicked");
+   let firstNameBox = 
+        <HTMLInputElement>document.getElementById("first-name");
+    let fName = firstNameBox.value
+    if(fName == ""){
+        let errSpan = 
+        <HTMLSpanElement>firstNameBox.nextElementSibling;
+        errSpan.innerText = "First name is required";
+    }
 
 }

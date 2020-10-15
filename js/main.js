@@ -3,5 +3,10 @@ window.onload = function () {
     formBtn.onclick = main;
 };
 function main() {
-    alert("Reg button was clicked");
+    var firstNameBox = document.getElementById("first-name");
+    var fName = firstNameBox.value;
+    if (fName == "") {
+        var errSpan = firstNameBox.nextElementSibling;
+        errSpan.innerText = "First name is required";
+    }
 }
