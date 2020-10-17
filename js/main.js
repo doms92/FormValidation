@@ -3,10 +3,16 @@ window.onload = function () {
     formBtn.onclick = main;
 };
 function main() {
-    var firstNameBox = document.getElementById("first-name");
-    var fName = firstNameBox.value;
-    if (fName == "") {
-        var errSpan = firstNameBox.nextElementSibling;
-        errSpan.innerText = "First name is required";
+    validateTxtInput("first-name", "First name is required");
+    validateTxtInput("last-name", "Last name is required");
+}
+function validateTxtInput(id, errMsg) {
+    var txtBox = document.getElementById(id);
+    var txtBoxValue = txtBox.value;
+    if (txtBoxValue == "") {
+        var errSpan = txtBox.nextElementSibling;
+        errSpan.innerText = errMsg;
+        return false;
     }
+    return true;
 }
