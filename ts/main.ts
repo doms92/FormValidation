@@ -10,6 +10,24 @@ function main():void{
    validateTxtInput("first-name", "First name is required");
    validateTxtInput("last-name", "Last name is required");
 
+   // Validate date
+   let dobBox = <HTMLInputElement>document.getElementById("dob")
+   let dob = dobBox.value
+   if(!isValidDate(dob)){
+       let errSpan = dobBox.nextElementSibling;
+       errSpan.innerHTML = "Invalid Format"
+
+   }
+
+}
+
+function isValidDate(input:string):boolean{
+    // Validating mm/dd/yyyy
+   let pattern = /^\d{1,2}\/\d{1,2}\/\d{4}$/g
+   return pattern.test(input);
+   
+   
+
 }
 /**
  * Resets all the spans back to the default text
