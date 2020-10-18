@@ -11,14 +11,19 @@ function main():void{
    validateTxtInput("last-name", "Last name is required");
 
    // Validate date
-   let dobBox = <HTMLInputElement>document.getElementById("dob")
-   let dob = dobBox.value
-   if(!isValidDate(dob)){
-       let errSpan = dobBox.nextElementSibling;
-       errSpan.innerHTML = "Invalid Format"
+   CheckValidDate();
 
-   }
+}
 
+function CheckValidDate() {
+    let dobBox = <HTMLInputElement>document.getElementById("dob");
+    let dob = dobBox.value;
+    if (!isValidDate(dob)) {
+        // let errSpan = dobBox.nextElementSibling;
+        // errSpan.innerHTML = "Invalid Format"
+        let errSpan = document.getElementById("dob-span");
+        errSpan.innerHTML = "Format should be mm/dd/yyyy";
+    }
 }
 
 function isValidDate(input:string):boolean{
