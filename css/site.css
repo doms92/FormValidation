@@ -2,6 +2,11 @@ form span{
     color: red;
 }
 
+body{
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
 button{
     padding: .5em;
     border-radius: .2em;
